@@ -558,8 +558,9 @@ class App:
             search = self._search_var.get().strip()
             if search:
                 parts.append(f'"{search}"')
+            sep = " \u2014 "
             ttk.Label(self._breadcrumb_frame,
-                      text=f"{self.store.root.name}  [searching all: {' \u2014 '.join(parts)}]",
+                      text=f"{self.store.root.name}  [searching all: {sep.join(parts)}]",
                       font=("", 10, "bold")).pack(side=tk.LEFT)
             self._up_btn.configure(state=tk.DISABLED)
             return
